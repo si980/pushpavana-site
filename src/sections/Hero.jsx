@@ -202,7 +202,7 @@ export default function Hero() {
     const tryPlay = () => {
       video.play().catch(() => {
         const retry = () => {
-          video.play().catch(() => {});
+          video.play().catch(() => { });
           window.removeEventListener('click', retry);
           window.removeEventListener('scroll', retry);
           window.removeEventListener('touchstart', retry);
@@ -307,7 +307,7 @@ export default function Hero() {
               video.style.opacity = '1';
               canvas.style.opacity = '0';
               if (!isVideoPlayingRef.current) {
-                video.play().catch(() => {});
+                video.play().catch(() => { });
                 isVideoPlayingRef.current = true;
               }
             } else if (progress > 0.015 && progress <= 0.08) {
@@ -316,7 +316,7 @@ export default function Hero() {
               video.style.opacity = String(1 - fadeRatio);
               canvas.style.opacity = String(fadeRatio);
               if (!isVideoPlayingRef.current) {
-                video.play().catch(() => {});
+                video.play().catch(() => { });
                 isVideoPlayingRef.current = true;
               }
             } else {
