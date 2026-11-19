@@ -1,0 +1,42 @@
+// Benefits data matching exact reference PDF and landing page
+export const benefits = [
+  {
+    id: 'tax',
+    number: '01',
+    title: 'Lower tax',
+    text: 'Biomass pellets attract 5% GST. Coal is taxed at 18%.',
+    image: '/assets/why_switch/card-01-lower-tax.jpg',
+    imageAlt: 'Indian farmer in paddy field with bullocks and tractor',
+    accentColor: '#C6A56A',
+  },
+  {
+    id: 'treefree',
+    number: '02',
+    title: 'Tree-free &\nrenewable',
+    shortTitle: 'Tree-free &\nrenewable',
+    text: 'Made from agricultural and timber residue — never from cut trees.',
+    image: '/assets/why_switch/card-02-tree-free.jpg',
+    imageAlt: 'Lush misty green pine forest with sunbeams',
+    accentColor: '#456F5C',
+  },
+  {
+    id: 'heat',
+    number: '03',
+    title: 'Steady heat',
+    shortTitle: 'Steady\nheat',
+    text: 'Uniform calorific value and low ash for consistent combustion.',
+    image: '/assets/why_switch/card-03-steady-heat.jpg',
+    imageAlt: 'Mother lovingly holding and cradling baby',
+    accentColor: '#D97706',
+  },
+  {
+    id: 'supply',
+    number: '04',
+    title: 'Supply on schedule',
+    shortTitle: 'Supply on\nschedule',
+    text: 'Dedicated logistics network delivering on scheduled monthly contracts.',
+    image: '/assets/why_switch/card-04-supply-schedule.jpg',
+    imageAlt: 'Modern heavy commercial truck on open highway',
+    accentColor: '#2563EB',
+  },
+];

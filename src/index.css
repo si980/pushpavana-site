@@ -1,0 +1,100 @@
+@import './design-tokens.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: auto;
+  scroll-padding-top: 76px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-cream);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Layout helpers ── */
+.section-pad {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+
+.container {
+  width: min(var(--container-max), 100% - 72px);
+  margin: 0 auto;
+}
+
+/* ── Typography Defaults ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-light);
+  letter-spacing: var(--tracking-heading);
+  line-height: var(--leading-heading);
+  margin: 0;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Focus rings ── */
+:focus-visible {
+  outline: 2px solid var(--forest);
+  outline-offset: 2px;
+}
+
+/* ── GPU optimization: will-change for animated elements ── */
+.gsap-animated {
+  will-change: transform, opacity;
+}
+
+/* ── Manifesto line overflow for clip-path reveal ── */
+.manifesto-line {
+  display: block;
+  overflow: hidden;
+}
+
+/* ── Hero line clip-path overflow ── */
+.hero-line {
+  display: block;
+  overflow: hidden;
+}
+
+/* ── WhySwitch card transition ── */
+.why-card-active {
+  transition: grid-column 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Smooth image reveal (clip-path) ── */
+[data-reveal] {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.85s cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-reveal].revealed {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* ── Input focus ring override for consistency ── */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #073D2B;
+}
+
+/* ── Button press feedback ── */
+button:active, a[role="button"]:active {
+  transform: scale(0.98);
+}
+
