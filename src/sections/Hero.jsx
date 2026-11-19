@@ -345,12 +345,12 @@ export default function Hero() {
           }
 
           // ── Narrative Story Captions Timed Scrub ──────────────────────────
-          // Caption 1: Phase 1 (Raw Harvest Residue) [14% to 34%]
+          // Caption 1: Phase 1 (Raw Harvest Residue) [12% to 40%] (~2.0s sustained reading)
           const c1 = caption1Ref.current;
           if (c1) {
-            if (progress >= 0.14 && progress <= 0.34) {
-              const localP = (progress - 0.14) / 0.20;
-              const alpha = localP < 0.25 ? localP / 0.25 : localP > 0.75 ? (1 - localP) / 0.25 : 1;
+            if (progress >= 0.12 && progress <= 0.40) {
+              const localP = (progress - 0.12) / 0.28;
+              const alpha = localP < 0.20 ? localP / 0.20 : localP > 0.80 ? (1 - localP) / 0.20 : 1;
               c1.style.opacity = String(alpha);
               c1.style.transform = `translateY(${(1 - alpha) * 20}px)`;
             } else {
@@ -358,12 +358,12 @@ export default function Hero() {
             }
           }
 
-          // Caption 2: Phase 2 (Molecular Centrifugal Spiral) [42% to 64%]
+          // Caption 2: Phase 2 (Molecular Centrifugal Spiral) [42% to 70%] (~2.0s sustained reading)
           const c2 = caption2Ref.current;
           if (c2) {
-            if (progress >= 0.42 && progress <= 0.64) {
-              const localP = (progress - 0.42) / 0.22;
-              const alpha = localP < 0.25 ? localP / 0.25 : localP > 0.75 ? (1 - localP) / 0.25 : 1;
+            if (progress >= 0.42 && progress <= 0.70) {
+              const localP = (progress - 0.42) / 0.28;
+              const alpha = localP < 0.20 ? localP / 0.20 : localP > 0.80 ? (1 - localP) / 0.20 : 1;
               c2.style.opacity = String(alpha);
               c2.style.transform = `translateY(${(1 - alpha) * 20}px)`;
             } else {
@@ -371,12 +371,12 @@ export default function Hero() {
             }
           }
 
-          // Caption 3: Phase 3 (High-Calorie Pellet Stream) [70% to 92%]
+          // Caption 3: Phase 3 (High-Calorie Pellet Stream) [72% to 96%] (~2.0s sustained reading)
           const c3 = caption3Ref.current;
           if (c3) {
-            if (progress >= 0.70 && progress <= 0.92) {
-              const localP = (progress - 0.70) / 0.22;
-              const alpha = localP < 0.25 ? localP / 0.25 : localP > 0.75 ? (1 - localP) / 0.25 : 1;
+            if (progress >= 0.72 && progress <= 0.96) {
+              const localP = (progress - 0.72) / 0.24;
+              const alpha = localP < 0.20 ? localP / 0.20 : localP > 0.85 ? (1 - localP) / 0.15 : 1;
               c3.style.opacity = String(alpha);
               c3.style.transform = `translateY(${(1 - alpha) * 20}px)`;
             } else {
@@ -424,8 +424,8 @@ export default function Hero() {
 
       activeTween = gsap.to(scrollObj, {
         y: targetY,
-        duration: 1.8, // 3x brisk cinematic speed
-        ease: 'power2.inOut',
+        duration: 6.8, // Natural video speed matching 95s reference video pacing (~40fps playback)
+        ease: 'power1.inOut',
         onUpdate: () => {
           window.scrollTo(0, scrollObj.y);
           ScrollTrigger.update();
@@ -436,7 +436,7 @@ export default function Hero() {
           setTimeout(() => {
             isAutoScrolling = false;
             activeTween = null;
-          }, 80);
+          }, 100);
         },
       });
     };
